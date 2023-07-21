@@ -2,8 +2,10 @@
   "name": "todo-app-bn",
   "version": "1.0.0",
   "description": "typescript,Graphql to app project",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
+    "build": "tsc",
+    "start":"node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
     "generate": "ts-node --transpile-only src/schema.ts",

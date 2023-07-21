@@ -53,9 +53,14 @@ export const LinkMutation = extendType({
             },
             resolve(parent,args,context){
                 const  { description} = args;
+                
+                if (description.trim() === '') {
+                    throw new Error('Description cannot be empty');
+                  }
+
                 const newTodo = context.prisma.todoapp.create({  
                     data: {
-                        description: args.description
+                        description: description
                     }
                 });
                 return newTodo;
